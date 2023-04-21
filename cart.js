@@ -35,10 +35,10 @@ const cart = [
 
 
 
-
-    const summedPrice = cart.reduce((el, acc, curr) => {
-    return acc.price + curr.price
-})
+let initialValue = 0;
+const sumWithInitial = cart.reduce((acc, curr) => acc + curr.price, 0);
+  
+  console.log(sumWithInitial);
 
 
 //////////////////PROBLEM 2////////////////////

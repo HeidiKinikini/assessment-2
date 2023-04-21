@@ -30,7 +30,17 @@
     'kids'
 */
 
-//CODE HERE
+const pizza = {
+    name: 'cheese',
+    price: 6,
+    category: 'entree',
+    popularity: 100,
+    rating: 10,
+    tags: [
+        'classic', 'cheesy', 'original', 'melty'
+    ]
+
+}
 
 
 
@@ -42,7 +52,7 @@
     Use dot notation to access the value.
 */
 
-//CODE HERE
+console.log(pizza.popularity)
 
 
 /*
@@ -52,7 +62,7 @@
     get the value.
 */
 
-//CODE HERE
+console.log(pizza.tags[1])
 
 
 /*
@@ -61,8 +71,9 @@
     
     Print the value of your new price variable.
 */
+const {price} = pizza
 
-//CODE HERE
+console.log(price)
 
 
 /*
@@ -72,7 +83,8 @@
     Print the value of your category variable. 
 */
 
-//CODE HERE
+const {category} = pizza
+console.log(category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -87,8 +99,44 @@
     data in some functions that you'll write.
 */
 
-//CODE HERE
+const obj = {
 
+}
+
+foodArr = [
+{
+    name: 'breadsticks',
+    price: 3,
+    category: 'appetizer',
+    popularity: 75,
+    rating: 7,
+    tags: ['warm', 'cheesy', 'homemade']
+},
+{
+name: 'pepporoni',
+price: 7,
+category: "entree",
+popularity: 90,
+rating: 9,
+tags: ['spicy', 'cheesy', 'most loved topping']
+},
+{
+name: 'lava cake',
+price: 9,
+category: 'dessert',
+popularity: 100,
+rating: 10,
+tags: ['gooey', 'chocolatey', 'dessert']
+},
+{
+name: 'combination',
+price: 10,
+category: 'entree',
+popularity: 50,
+rating: 5,
+tags: ['veggie', 'filling', 'everything topping']
+}
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,8 +153,9 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(food => food.tags.includes('cheesy'))
 
+console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -148,7 +197,16 @@
     Return the filtered array from the entire function
 */
 
-//CODE HERE
+function filterByProperty(property, number, type) {
+    let filteredArr = foodArr.filter((food) => {
+        if(type === 'above') {
+            return food[property] > number
+        } else if(type === 'below') {
+            return food[property] < number
+        }
+    })
+    return filteredArr
+}
 
 
 /*
@@ -158,4 +216,4 @@
     You'll have to console.log to see the filtered array
 */
 
-//CODE HERE
+console.log(filterByProperty('price', 7, 'above'))
